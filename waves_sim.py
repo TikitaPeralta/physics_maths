@@ -9,6 +9,26 @@ def play():
     display = pygame.Surface((W, H))
     screen = pygame.display.set_mode((W, H))
     clock = pygame.time.Clock()
+    velocity = 10
+    circle_x = 100
+    circle_y = 300
 
     run = True
-    velocity = 10
+
+    while run:
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+        
+        screen.fill(black)
+        
+        pygame.draw.circle(screen, white, [circle_x, circle_y], 10)
+
+
+        display.blit(screen, (0,0))
+        pygame.display.update()
+        
+    pygame.quit()
+
+play()
